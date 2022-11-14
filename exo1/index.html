@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <head>
+        <!-- CSS -->
+        <link href="../shared/style.css" rel="stylesheet">
+
+        <!-- JS -->
+        <script type="text/javascript" src="./object.js"></script>
+
+    </head>
+    <body>
+        <h1>
+            Implémenter le compteur
+        </h1>
+        <p>
+            Ajouter une unité au compteur lors du click sur le boutton "+" <br />
+            Retirer une unité au compteur lors du click sur le boutton "-" <br />
+
+            Attention, le compteur ne peut descendre en dessous de 0 ou monter au dessus de 10. <br />
+            Si l'utilisateur effectue une action "+" ou "-" sur le compteur qui le fait sortir de son range (entre 0 et 10), 
+            Il ne faut pas affecter la valeur du compteur mais afficher un message d'erreur à l'utilisateur.
+        </p>
+
+        <main class="container text-bg-light text-center">
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <button id="decrease-button" class="btn btn-primary">
+                        -
+                    </button>
+                </div>
+
+                <div id="counter" class="col-auto">
+                    0
+                </div>
+                <div class="col-2">
+                    <button id="increase-button" class="btn btn-primary">
+                        +
+                    </button>
+                </div>
+            </div>
+            <div id="message" class="text-center mt-5">
+                Message d'erreur ici
+            </div>
+        </main>
+    </body>
+</html>
