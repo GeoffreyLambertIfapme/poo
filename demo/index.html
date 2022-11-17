@@ -3,9 +3,6 @@
         <!-- CSS -->
         <link href="../shared/style.css" rel="stylesheet">
 
-        <!-- JS -->
-        <script type="text/javascript" src="./object.js"></script>
-
     </head>
     <body>
         <h1>
@@ -16,29 +13,54 @@
         </p>
 
         <main class="container text-bg-light">
+             /* Mon chat */
             <div class="row">
                 <div class="col-6">
                     <img width="100%" src="data:image/jpeg;base64,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" />
                 </div>
                 <div class="col-6">
-                    <p>Etat de forme: <span></span></p>
-                    <p>Hoo mais tu parles: <span></span></p>
+                    <p>Etat de forme: <span id="balance"></span></p>
+                    <p>Hoo mais tu parles: <span id="talk-box"></span></p>
                 </div>
             </div>
         
             <div class="row py-4">
                 <div class="col">
-                    <button class="btn btn-primary btn-lg">
+                    <button class="btn btn-primary btn-lg" id="parler">
                         Parler
                     </button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-lg">
+                    <button class="btn btn-primary btn-lg" id="manger">
+                        Manger
+                    </button>
+                </div>
+            </div>
+
+            /* Mon chien */
+            <div class="row">
+                <div class="col-6">
+                    <img width="100%" src="https://static.cotemaison.fr/medias_10824/w_1815,h_1362,c_crop,x_99,y_0/w_1080,h_600,c_fill,g_north/v1456392403/10-conseils-pour-rendre-votre-chien-heureux_5542245.jpg" />                </div>
+                <div class="col-6">
+                    <p>Etat de forme: <span id="balance-chien"></span></p>
+                    <p>Hoo mais tu parles: <span id="talk-box-chien"></span></p>
+                </div>
+            </div>
+        
+            <div class="row py-4">
+                <div class="col">
+                    <button class="btn btn-primary btn-lg" id="parler-chien">
+                        Parler
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary btn-lg" id="manger-chien">
                         Manger
                     </button>
                 </div>
             </div>
         </main>
-
+        <!-- JS -->
+        <script type="text/javascript" src="./object.js"></script>
     </body>
 </html>
