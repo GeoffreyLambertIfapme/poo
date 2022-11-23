@@ -20,35 +20,67 @@ class Counter {
         this.minValue = minValue;
         this.maxValue = maxValue;
     }
- // augmenter sa valeur
+
     increase() {
-
+         this.count++;
     }
-// diminue sa valeur
+
     decrease() {
-
+        this.count--;
     }
-// retour si le compteur respect les bornes (min et max)
-    isValid() {
 
-        return x;
+    isValid() {
+        if(this.count < this.minValue){
+            return StatusType.Min;
+        }
+        if(this.count > this.maxValue){
+            return StatusType.Max
+        }
+        return StatusType.InRange;
+    }
+
+    displayInformation(counter, message) {
+
+        const status = this.isValid();
+
+        switch(status) {
+            case StatusType.InRange: 
+                counter.innerText = this.count;
+                message.innerText = "";
+                break;
+            case StatusType.Min: message.innerText = "Vous ne pouvez pas aller en dessous de "+ minValue;
+                this.count = minValue;
+                break;
+            case StatusType.Max: message.innerText = "Vous ne pouvez pas aller au dessus de "+ maxValue;
+                this.count = maxValue;
+                break;
+            case StatusType.Error: message.innerText = "Oups une erreur est survenue !";
+                this.count = 0;
+                break;
+            default: break;
+        }
     }
 }
-
 
 const decreaseButton = document.getElementById("decrease-button");
 const increaseButton = document.getElementById("increase-button");
 const counterDiv = document.getElementById("counter");
 const message = document.getElementById("message");
 
+const counter = new Counter(counterDiv.innerText, minValue, maxValue);
+
 decreaseButton.addEventListener('click', decreaseValue);
 increaseButton.addEventListener('click', increaseValue);
 
 function decreaseValue() {
-    updateCounter(Operation.decrease);
+    counter.decrease();
+
+    counter.displayInformation(counterDiv, message);
 }
 function increaseValue() {
-    updateCounter(Operation.increase);
+    counter.increase();
+
+    counter.displayInformation(counterDiv, message);
+    
 }
 
-const counter = new Counter(counterDiv.innerText, minValue, maxValue);
